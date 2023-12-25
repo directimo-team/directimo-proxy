@@ -3,7 +3,7 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 const app = express();
 const port = process.env.PORT || 4321;
 
-app.use("/resales", createProxyMiddleware({ target: "https://webapi.resales-online.com/V6", changeOrigin: false }));
+app.use("/resales", createProxyMiddleware({ target: "https://webapi.resales-online.com/V6", changeOrigin: true }));
 
 app.get("/ping", (req, res) => {
 	res.send("pong");
